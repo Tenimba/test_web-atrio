@@ -7,9 +7,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.DATE,
       allowNull: true,
     },
-    personId: {  // Utilisé dans le code
+    personId: { 
       type: DataTypes.INTEGER,
-      field: 'person_id',  // Nom de la colonne dans la base de données
+      field: 'person_id',
       references: {
         model: 'People',
         key: 'id',

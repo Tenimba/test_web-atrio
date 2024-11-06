@@ -7,16 +7,16 @@ const cors = require('cors');
 const mysql = require('mysql2/promise');
 const fs = require('fs');
 const path = require('path');
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./config/swagger');
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+console.log(swaggerSpec);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use('/api/persons', personRoutes);
 app.use('/api/jobs', jobRoutes);
-
-app.get('/api', (req, res) => {
-  res.send("Bienvenue sur l'API de gestion des personnes et emplois");
-});
 
 const configPath = path.resolve(__dirname, './config/config.json');
 const configData = JSON.parse(fs.readFileSync(configPath, 'utf8'));
