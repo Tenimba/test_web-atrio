@@ -53,6 +53,6 @@ nav {
 nav a {
   margin: 0 15px;
   text-decoration: none;
-  color: #42b983;
+  color: #56728b;
 }
 </style>

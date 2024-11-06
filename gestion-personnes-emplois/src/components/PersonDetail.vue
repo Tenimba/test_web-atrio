@@ -77,27 +77,30 @@
   
   <style scoped>
   .person-detail {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    font-family: Arial, sans-serif;
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    color: #333;
   }
   
   h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 25px;
     text-align: center;
+    border-bottom: 2px solid #7d6ec4;;
+    padding-bottom: 10px;
   }
   
   .job-search-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 15px;
+    margin-bottom: 25px;
   }
   
   .form-group {
@@ -106,57 +109,69 @@
   }
   
   label {
-    font-weight: bold;
-    margin-bottom: 5px;
+    font-weight: 500;
     color: #555;
+    margin-bottom: 8px;
   }
   
   input[type="date"] {
-    padding: 8px;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #cfd8dc;
+    border-radius: 6px;
+    transition: border-color 0.2s;
+  }
+  
+  input[type="date"]:focus {
+    outline: none;
+    background-color: #7d6ec4;
   }
   
   .search-button {
-    padding: 10px 15px;
+    align-self: center;
+    padding: 12px 18px;
     font-size: 16px;
     color: #fff;
     background-color: #7d6ec4;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   .search-button:hover {
-    background-color: #0056b3;
+    background-color: #2980b9;
   }
   
   .job-list {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     margin: 0;
   }
   
   .job-item {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 10px;
+    padding: 15px 20px;
+    border: 1px solid #dfe6e9;
+    border-radius: 8px;
+    margin-bottom: 15px;
     background-color: #fff;
-    display: flex;
-    flex-direction: column;
+    transition: box-shadow 0.2s;
+  }
+  
+  .job-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .job-item strong {
-    color: #333;
     font-size: 18px;
+    color: #2c3e50;
   }
   
   .job-dates {
-    color: #777;
+    color: #636e72;
     font-size: 14px;
+    margin-top: 5px;
+    display: block;
   }
   </style>
   

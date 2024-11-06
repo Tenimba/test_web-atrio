@@ -14,14 +14,16 @@
       <li v-for="person in filteredPeople" :key="person.id" class="person-item">
         <div class="person-header">
           <span class="person-name">{{ person.firstName }} {{ person.lastName }}</span>
-          <span class="person-age">- Âge: {{ calculateAge(person.birthDate) }} ans</span>
+          <span class="person-age"> Age: {{ calculateAge(person.birthDate) }} ans</span>
         </div>
 
         <div v-if="person.currentJobs && person.currentJobs.length > 0" class="current-jobs">
           <h3>Emplois Actuels</h3>
           <div v-for="job in person.currentJobs" :key="job.id" class="job-item">
+            <span class="job-company">emploi:</span>
             <span class="job-position">{{ job.position }}</span>
-            <span class="job-company">chez {{ job.companyName }}</span>
+            <span class="job-company"> chez </span>
+            <span class="job-position"> {{ job.companyName }}</span>
             <span class="job-dates">
               (De: {{ formatDate(job.startDate) }} à {{ job.endDate ? formatDate(job.endDate) : 'Présent' }})
             </span>
@@ -202,15 +204,9 @@ h2 {
   text-decoration: none;
 }
 
-.details-link:hover, .add-job-link:hover {
-  background-color: #456fa0;
-}
-
 .details-link {
-  background-color: #008CBA;
+  background-color: #997aac;
+  border-radius: 10%;
 }
 
-.details-link:hover {
-  background-color: #007bb5;
-}
 </style>
