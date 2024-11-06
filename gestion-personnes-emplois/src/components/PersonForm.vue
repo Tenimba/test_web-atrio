@@ -40,6 +40,7 @@ export default {
     async submitPerson() {
       const age = this.calculateAge(this.person.birthDate);
       
+      // Vérification de l'âge
       if (age < 0 || age > 150) {
         this.error = "L'âge doit être compris entre 0 et 150 ans.";
         return;
@@ -55,3 +56,68 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.person-form {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: #7d6ec4;
+  outline: none;
+}
+
+button.submit-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #7d6ec4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+button.submit-btn:hover {
+  background-color: #5f47a7;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 10px;
+}
+</style>

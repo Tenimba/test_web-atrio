@@ -32,14 +32,17 @@ async function initializeDatabase() {
 
     await connection.query(`CREATE DATABASE IF NOT EXISTS ${database}`);
     console.log("Base de données vérifiée ou créée.");
+    
     await connection.end();
 
     await sequelize.sync({ force: false });
     console.log("Base de données synchronisée avec Sequelize.");
+
   } catch (error) {
     console.error("Erreur d'initialisation de la base de données:", error);
   }
 }
+
 initializeDatabase();
 
 const PORT = process.env.PORT || 3000;

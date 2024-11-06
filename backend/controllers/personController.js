@@ -6,7 +6,7 @@ exports.createPerson = async (req, res) => {
     const age = new Date().getFullYear() - new Date(birthDate).getFullYear();
     
     if (age < 0 || age > 150) {
-      return res.status(400).json({ error: "L'age doit etre entre 0 et 150 ans" });
+      return res.status(400).json({ error: "La date de naissance doit être valide et la personne doit avoir moins de 150 ans." });
     }
     
     const person = await Person.create({ firstName, lastName, birthDate });

@@ -33,6 +33,7 @@ exports.getJobs = async (req, res) => {
   }
 };
 
+
 exports.getJobsByPersonAndDates = async (req, res) => {
   const { personId } = req.params;
   const { startDate, endDate } = req.query;
@@ -66,6 +67,8 @@ exports.getJobsByPersonAndDates = async (req, res) => {
     res.status(500).send(error.message);
   }
 };
+
+
 
 exports.getJobsByPerson = async (req, res) => {
   const { personId } = req.params;
