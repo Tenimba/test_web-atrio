@@ -1,0 +1,8 @@
+# Ignorer les node_modules dans ./backend
+./backend/node_modules/
+
+# Ignorer les node_modules dans ./gestion-personnes-emplois
+./gestion-personnes-emplois/node_modules/
+
+# Ignorer tous les node_modules (si tu veux ignorer ceux de tous les sous-répertoires)
+node_modules/
