@@ -6,3 +6,6 @@
 
 # Ignorer tous les node_modules (si tu veux ignorer ceux de tous les sous-répertoires)
 node_modules/
+
+# Ignorer les fichiers de configuration de VS Code
+.vscode/
