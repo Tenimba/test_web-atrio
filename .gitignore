@@ -9,4 +9,26 @@ node_modules/
 
 # Ignorer les fichiers de configuration de VS Code
 .vscode/
-gestion-personnes-emplois
+
+./gestion-personnes-emplois/.DS_Store
+./gestion-personnes-emplois/dist
+
+
+# local env files
+./gestion-personnes-emplois/.env.local
+./gestion-personnes-emplois/.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
