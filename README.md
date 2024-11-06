@@ -42,7 +42,7 @@ Avant de commencer, assurez-vous que vous avez installé les logiciels suivants 
 
 - [Node.js]
 - [MySQL] ou toute autre base de données compatible avec Sequelize.
--[Vue.js]
+- [Vue.js]
 
 ### 1. Cloner le repository
 
