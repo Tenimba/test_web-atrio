@@ -9,3 +9,4 @@ node_modules/
 
 # Ignorer les fichiers de configuration de VS Code
 .vscode/
+gestion-personnes-emplois
