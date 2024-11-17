@@ -48,8 +48,6 @@ npm install
 ```
 Configurez la base de données dans `config/config.json`, puis démarrez le serveur :
 ```bash
-npm start
-# ou
 node app.js
 ```
 
