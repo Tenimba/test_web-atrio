@@ -1,70 +1,84 @@
 # Projet API Gestion des Personnes et Emplois
 
 ## Description
-
 Cette API permet de gérer des informations sur des **Personnes** et leurs **Emplois**. Elle permet de :
-- Créer des personnes avec des informations de base (nom, prénom, date de naissance).
-- Ajouter des emplois à ces personnes, en gérant les dates de début et de fin d'emploi.
-- Effectuer des recherches sur les personnes et leurs emplois.
+* Créer des personnes avec des informations de base (nom, prénom, date de naissance)
+* Ajouter des emplois à ces personnes, en gérant les dates de début et de fin d'emploi
+* Effectuer des recherches sur les personnes et leurs emplois
 
 L'application dispose également d'une **interface front-end** pour interagir avec l'API et d'une **documentation Swagger** pour tester les routes API.
 
 ## Fonctionnalités
 
-### 1. **Gestion des Personnes**
-- Créer une nouvelle personne avec les champs `firstName`, `lastName`, et `birthDate`. 
-- L'application valide l'âge de la personne : seules les personnes de moins de 150 ans peuvent être enregistrées.
+### 1. Gestion des Personnes
+* Créer une nouvelle personne avec les champs `firstName`, `lastName`, et `birthDate`
+* L'application valide l'âge de la personne : seules les personnes de moins de 150 ans peuvent être enregistrées
 
-### 2. **Gestion des Emplois**
-- Ajouter un emploi pour une personne avec `companyName`, `position`, `startDate`, et `endDate`.
-  - La date de fin est facultative pour le poste actuellement occupé.
-  - Une personne peut avoir plusieurs emplois avec des dates qui se chevauchent.
+### 2. Gestion des Emplois
+* Ajouter un emploi pour une personne avec `companyName`, `position`, `startDate`, et `endDate`
+   * La date de fin est facultative pour le poste actuellement occupé
+   * Une personne peut avoir plusieurs emplois avec des dates qui se chevauchent
 
-### 3. **Fonctionnalités Front-End**
-- Sauvegarder une nouvelle personne. L'interface vérifie si la personne est âgée de moins de 150 ans avant d'enregistrer les données.
-- Ajouter des emplois à une personne via un formulaire avec les dates de début et de fin.
-- Afficher toutes les personnes enregistrées par ordre alphabétique, leur âge et leurs emplois actuels.
-- Afficher toutes les personnes ayant travaillé dans une entreprise donnée.
-- Afficher tous les emplois d'une personne entre deux dates spécifiques.
+### 3. Interface Front-End
+* Sauvegarder une nouvelle personne avec validation de l'âge (<150 ans)
+* Ajouter des emplois à une personne via un formulaire
+* Afficher toutes les personnes par ordre alphabétique avec leur âge et emplois actuels
+* Afficher toutes les personnes ayant travaillé dans une entreprise donnée
+* Afficher tous les emplois d'une personne entre deux dates spécifiques
 
-### 4. **Recherche et Filtres**
-- Recherche des emplois d'une personne entre deux dates données (startDate et endDate).
-- Affichage de la liste des personnes ayant travaillé pour une entreprise spécifique.
+### 4. Recherche et Filtres
+* Recherche des emplois d'une personne entre deux dates données
+* Liste des personnes ayant travaillé pour une entreprise spécifique
 
-### 5. **Documentation API**
-- La documentation Swagger permet de tester les différentes routes de l'API directement dans le navigateur.
+### 5. Documentation API
+* Documentation Swagger interactive pour tester les routes API
+
+## Prérequis
+Avant de commencer, assurez-vous d'avoir installé :
+* [Node.js](https://nodejs.org/)
+* [MySQL](https://www.mysql.com/) (ou autre base de données compatible Sequelize)
+* [Vue.js](https://vuejs.org/)
 
 ## Installation
 
-### Prérequis
-
-Avant de commencer, assurez-vous que vous avez installé les logiciels suivants :
-
-- [Node.js]
-- [MySQL] ou toute autre base de données compatible avec Sequelize.
-- [Vue.js]
-
-### 1. Cloner le repository
-
+### 1. Configuration du Backend
 ```bash
-git clone https://github.com/Tenimba/testTechnique.git
-```
-
-### 2. Installer le back
-```
 cd backend
 npm install
-configue db dans confi/config.json
-npm start ou node app.js
 ```
-### 3.Installer du Front-End
+Configurez la base de données dans `config/config.json`, puis démarrez le serveur :
+```bash
+npm start
+# ou
+node app.js
 ```
-cd ../gestion-personnes-emplois/ 
+
+### 2. Configuration du Frontend
+```bash
+cd ../gestion-personnes-emplois/
 npm install
 npm run serve
 ```
 
-### 4.Documentation API (Swagger)
-La documentation de l'API est générée automatiquement avec Swagger et accessible à l'adresse suivante :
+### 3. Accès à l'application
+- Frontend : `http://localhost:8080`
+- Backend API : `http://localhost:3000`
+- Documentation Swagger : `http://localhost:3000/api-docs`
 
-http://localhost:3000/api-docs
+## Structure du Projet
+- `backend/` : Serveur Node.js avec Express
+  - `controllers/` : Logique métier
+  - `models/` : Modèles Sequelize
+  - `routes/` : Routes API
+  - `config/` : Configuration base de données
+- `gestion-personnes-emplois/` : Application Vue.js
+  - `src/components/` : Composants Vue
+  - `src/services/` : Services API
+  - `src/views/` : Pages de l'application
+
+## Routes API Principales
+- `POST /api/persons` : Créer une personne
+- `GET /api/persons` : Liste des personnes
+- `POST /api/persons/:id/jobs` : Ajouter un emploi
+- `GET /api/persons/:id/jobs` : Emplois d'une personne
+- `GET /api/companies/:name/persons` : Personnes par entreprise
